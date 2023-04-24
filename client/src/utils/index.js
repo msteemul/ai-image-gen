@@ -10,5 +10,8 @@ export function getRandomPrompt(prompt) {
 }
 
 export async function downloadImage(_id, photo) {
-  FileSaver.saveAs(photo, `${_id}.jpg`);
+  console.log(photo);
+  let modifiedUrl = photo.replace("http://", "https://");
+  console.log(modifiedUrl);
+  FileSaver.saveAs(modifiedUrl, `${_id}.jpg`);
 }
